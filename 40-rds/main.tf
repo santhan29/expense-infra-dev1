@@ -15,7 +15,7 @@ module "db" {
   port     = "3306"
 
   vpc_security_group_ids = [local.mysql_sg_id] 
-  skip_final_snapshot = true 
+  skip_final_snapshot = true   #while destroying it will be useful 
 
   tags = merge(
     var.common_tags,
@@ -79,4 +79,4 @@ module "records" {
     } 
   ]
 
-}
+} 

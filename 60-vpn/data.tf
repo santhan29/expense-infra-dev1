@@ -1,24 +1,24 @@
-data "aws_ssm_parameter" "bastion_sg_id" { 
-    name = "/${var.project_name}/${var.environment}/bastion_sg_id" 
+data "aws_ssm_parameter" "vpn_sg_id" { 
+    name = "/${var.project_name}/${var.environment}/vpn_sg_id" 
 }
 
 data "aws_ssm_parameter" "public_subnet_ids" {
     name = "/${var.project_name}/${var.environment}/public_subnet_ids"   
 }  
 
-data "aws_ami" "joindevops" {
+data "aws_ami" "joindevops" { 
 
     most_recent = true
-    owners = ["973714476881"]
+    owners = ["679593333241"] 
     
     filter {
         name = "name"
-        values = ["RHEL-9-DevOps-Practice"]
+        values = ["OpenVPN Access Server Community Image-fe8020db-*"] 
     }
 
     filter {
         name = "root-device-type"
-        values = ["OpenVPN Access Server Community Image-fe8020db-*"] 
+        values = ["ebs"]  
     }
 
     filter {
