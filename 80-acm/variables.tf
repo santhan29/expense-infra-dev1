@@ -1,3 +1,7 @@
+variable "zone_name" {
+    default = "aws81s.store" 
+}
+
 variable "project_name" {
     default = "expense"
 }
@@ -14,12 +18,6 @@ variable "common_tags" {
     }
 } 
 
-variable "backend_tags" {
-    default = {
-        Component = "backend"   
-    }
-} 
-
-variable "zone_name" {
-    default = "aws81s.store" 
+variable "zone_id" {
+    default = "Z01291701B7D72LVWRG1U"
 }
